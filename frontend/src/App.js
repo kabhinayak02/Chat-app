@@ -5,7 +5,7 @@ import Chat from './pages/Chat';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Router>
         <Routes>
           <Route exact path="/" element={<Home/>} />
