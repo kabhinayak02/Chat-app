@@ -6,11 +6,8 @@ import axios from "axios";
 
 
 const Login = () => {
-    const [name, setName] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
-    const [confirmpassword, setConfirmpassword] = useState();
-    const [pic, setPic] = useState();
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(false);
     // import { ChatState } from "../../Context/ChatProvider";
