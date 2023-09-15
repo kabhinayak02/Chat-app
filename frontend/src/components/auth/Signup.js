@@ -13,6 +13,7 @@ const Signup = () => {
     const [confirmpassword, setConfirmpassword] = useState();
     const [pic, setPic] = useState();
     const [show, setShow] = useState(false);
+    // const [showp, setShowp] = useState(false);
     const [picloading, setPicLoading] = useState(false);
     const toast = useToast();
     const navigate = useNavigate();

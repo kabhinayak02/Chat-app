@@ -22,11 +22,7 @@ const Login = () => {
     const handleClick = () => {
         setShow(!show);
     }
-
-    const postDetails = (pic) => {
-
-    }
-
+    
     const submitHandle = async () => {
         setLoading(true);
         if (!email || !password) {

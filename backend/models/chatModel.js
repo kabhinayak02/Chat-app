@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const chatModel = mongoose.Schema(
     {
-        ChatName: {
+        chatName: {
             type: String,
             trim: true,
         },
@@ -33,4 +33,4 @@ const chatModel = mongoose.Schema(
 
 const Chat = mongoose.model("Chat", chatModel);
 
-module.exports= Chat;
+module.exports = Chat;
