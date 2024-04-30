@@ -1,27 +1,22 @@
-const express = require('express');
-const chats = require('./data/data');
-const dotenv = require('dotenv');
-const connectDB = require('./config/db');
-const userRoutes = require('./routes/userRoutes');
-const chatRoutes = require('./routes/chatRoutes');
-const { notFound, errorHandler } = require('./middlewares/errorMiddleware');
+import express from "express";
+import dotenv from "dotenv"
+import authRoutes from "./routes/auth.route.js"
+import connectToMongoDB from "./db/connectToMongoDB.js"
+
+
+const app = express();
 
 dotenv.config();
-connectDB();
-const app = express();
-app.use(express.json()); // to accept JSON data from frontend;
+const PORT = process.env.PORT || 8000
 
+app.use("/api/auth", authRoutes)
 
-app.get('/', (req, res)=>{
-    res.send("API is running ");
+app.get("/", (req, res)=>{
+    res.send("Hello world!!");
+    
 })
 
-app.use('/api/user', userRoutes);
-app.use('/api/chat', chatRoutes);
-
-app.use(notFound);
-app.use(errorHandler);
-
-const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, console.log(`Server is started on PORT ${PORT}`));
+app.listen(PORT, ()=>{
+    connectToMongoDB()
+    console.log(`server is listning at port ${PORT}`)
+})
